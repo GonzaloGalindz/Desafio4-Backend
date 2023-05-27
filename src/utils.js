@@ -195,7 +195,7 @@ export class CartManager {
       this.carts = [...this.carts, newCart];
       if (this.carts) {
         const cartsToJSON = JSON.stringify(this.carts);
-        await fs.promises.writeFile("../carts.json", cartsToJSON);
+        await fs.promises.writeFile("./carts.json", cartsToJSON);
         msg.data.push(newCart);
       }
     } catch (error) {
@@ -258,7 +258,7 @@ export class CartManager {
           this.carts = newCartList;
           //actualizo el JSON de carritos
           const cartsToJSON = JSON.stringify(this.carts);
-          await fs.promises.writeFile("../carts.json", cartsToJSON);
+          await fs.promises.writeFile("./carts.json", cartsToJSON);
           //para evitar duplicados o inconvenientes, se crea el array vacio
           msg.data = [];
           //retorno el carrito para mostrarlo al cliente
@@ -279,7 +279,7 @@ export class CartManager {
           //actualizo la lista de carritos
           this.carts = newCartList;
           const cartsToJSON = JSON.stringify(this.carts);
-          await fs.promises.writeFile("../carts.json", cartsToJSON);
+          await fs.promises.writeFile("./carts.json", cartsToJSON);
           //para evitar duplicados o inconvenientes, se crea el array vacio
           msg.data = [];
           //se pushea la informacion

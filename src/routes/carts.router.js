@@ -12,19 +12,19 @@ routerCarts.get("/:cid", async (req, res) => {
       res.status(200).json({
         status: "success",
         msg: "cart sended",
-        data: getCart.data,
+        data: cartManager.data,
       });
     } else {
       res.status(404).json({
         status: "error not found",
-        msg: getCart.error,
+        msg: cartManager.error,
         data: {},
       });
     }
   } catch (error) {
     res.status(404).json({
       status: "error not found",
-      msg: getCart.error,
+      msg: cartManager.error,
       data: {},
     });
   }
